@@ -1,0 +1,18 @@
+{
+  "prettier.bracketSpacing": false,
+  "prettier.proseWrap": "preserve",
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "wrap_attributes": "aligned-multiple",
+      "htmlWhitespaceSensitivity": "ignore"
+    },
+    "prettyhtml": {
+      "printWidth": 180,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    }
+  },
+  "vetur.format.defaultFormatter.html": "prettier"
+}
