@@ -4,7 +4,8 @@ set mouse=a
 " Set Editor Font
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
-    GuiFont {font_name}:h{size}
+    " https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
+    GuiFont! FiraCode NF:h10
 endif
 
 " Disable GUI Tabline
@@ -19,7 +20,7 @@ endif
 
 " Enable GUI ScrollBar
 if exists(':GuiScrollBar')
-    GuiScrollBar 1
+    GuiScrollBar 0
 endif
 
 " Right Click Context Menu (Copy-Cut-Paste)
