@@ -1,7 +1,9 @@
 {
-  "prettier.bracketSpacing": false,
+  "prettier.bracketSpacing": true,
   "prettier.proseWrap": "preserve",
   "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.trailingComma": "none",
+  "prettier.arrowParens": "avoid",
   "vetur.format.defaultFormatter.html": "prettier",
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
