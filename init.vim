@@ -2,6 +2,15 @@
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 "
+" SETUP
+" Python providers
+" python3 and 2 (add to path) - for snippets
+" $ pip3 install pynvim
+"
+" Nodejs providers
+" $ npm install -g neovim 
+"
+" 
 call plug#begin('C:/Users/hp/AppData/Local/nvim/plugged')
 
 " Make sure you use single quotes
@@ -12,6 +21,8 @@ Plug 'preservim/nerdtree' |
 Plug 'mattn/emmet-vim' " has configuration
 Plug 'terryma/vim-multiple-cursors' " <C-n>
 Plug 'airblade/vim-gitgutter'
+
+Plug 'vim-scripts/ctrlp.vim' " has config
 
 " tagalong auto changes the pairs of html
 Plug 'AndrewRadev/tagalong.vim' " has configuration
@@ -26,7 +37,21 @@ Plug 'morhetz/gruvbox'
 
 """"" Experiments 
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/ctrlp.vim' " has config
+
+" Dim inactive window
+Plug 'TaDaa/vimade' " has configs
+
+""""""" SNIPPETS
+" Install python3 (add to path)
+" run 
+"    $ pip3 install pynvim
+" :checkhealth
+" snippet engine.
+Plug 'SirVer/ultisnips' " has config
+
+" snippets
+Plug 'honza/vim-snippets'
+Plug 'voronkovich/ultisnips-vue'
 
 " replaced these both by Ctrlp
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -396,6 +421,22 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " put below in the .bashrc
 " export FZF_DEFAULT_COMMAND='rg --files --follow --glob "!{node_modules/*,.git/*}"'
 " export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+"
+" # Ultisnips
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Vimade
+let g:vimade = {}
+let g:vimade.fadelevel = 0.7
+let g:vimade.enablesigns = 1
 
 " ============================================================================
 " ===                                 MISC.
