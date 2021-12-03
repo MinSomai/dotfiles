@@ -38,6 +38,9 @@ Plug 'morhetz/gruvbox'
 """"" Experiments 
 Plug 'tpope/vim-surround'
 
+" highlight similar words
+Plug 'RRethy/vim-illuminate'
+
 " Dim inactive window
 Plug 'TaDaa/vimade' " has configs
 
@@ -46,12 +49,13 @@ Plug 'TaDaa/vimade' " has configs
 " run 
 "    $ pip3 install pynvim
 " :checkhealth
-" snippet engine.
-Plug 'SirVer/ultisnips' " has config
-
+"
+" handled by coc-snippets
 " snippets
-Plug 'honza/vim-snippets'
-Plug 'voronkovich/ultisnips-vue'
+" add directory to the coc-settings, check if loaded successfully
+" $ :CocCommand workspace.showOutput snippets
+Plug 'honza/vim-snippets' "has config for coc-snippets
+" Plug 'voronkovich/ultisnips-vue'
 
 " replaced these both by Ctrlp
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -74,18 +78,14 @@ echo ">^.^< \n leader is ,"
 " ===                                 Nvim Configuration.
 " ============================================================================
 "speed up from normal to insert mode
-set ttimeoutlen=5
 set ttimeoutlen=0
-set encoding=utf-8
 runtime macros/matchit.vim
 
 set showmatch " show matching braces
-set hlsearch
 " after hilight of search esc to unhilight
 " map <esc> :noh<CR>
 
 syntax on
-set autoindent " indent in new lines
 set smartindent
 set linebreak
 
@@ -97,8 +97,6 @@ nnoremap ; :
 " in visual selection tab
 vmap < <gv
 vmap > >gv
-
-set ttyfast " fast redrawing
 
 " Change number of spaces that a <Tab> counts for during editing ops
 " set softtabstop=2
@@ -127,13 +125,11 @@ nnoremap <silent> <leader><Enter> :tabnew<CR>:terminal<CR>
 " ignore case when searching
 set ignorecase
 set smartcase " if has uppercase then case sensitive
-" Automatically re-read file if a change was detected outside of vim
-set autoread
 
 " change all to spaces
 set expandtab
 " spell checking
-set spell
+set spelllang=en
 
 """""""""""""""""""""""""""""""""""""""""
 " ==> Splits
@@ -178,6 +174,7 @@ set foldlevel=10
 " fold with space according to shift width
 map <space> za
 
+set title
 
 " ============================================================================
 " ===                                 Plugin Configuration.
@@ -233,7 +230,6 @@ let g:tagalong_additional_filetypes = ['vue', ]
 let g:user_emmet_leader_key=','
 
 " COC configuration
-set hidden
 set nobackup
 set nowritebackup
 set cmdheight=2
@@ -421,34 +417,30 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " put below in the .bashrc
 " export FZF_DEFAULT_COMMAND='rg --files --follow --glob "!{node_modules/*,.git/*}"'
 " export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-"
-" # Ultisnips
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " Vimade
 let g:vimade = {}
 let g:vimade.fadelevel = 0.7
 let g:vimade.enablesigns = 1
 
-" ============================================================================
-" ===                                 MISC.
-" ============================================================================
-" April fools
-" highlight ColorColumn ctermbg=red ctermfg=blue
-" exec 'set colorcolumn=' . join(range(2, 80, 3), ',')
+" vim-snippets, coc-snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
 
-" when there are unwanted white spaces and tabs, highlight them
-set listchars=tab:>~,nbsp:_,trail:.
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " ============================================================================
 " ===                                 Autocommands
