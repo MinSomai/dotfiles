@@ -10,7 +10,9 @@
 " Nodejs providers
 " $ npm install -g neovim 
 "
-" 
+" EXTRA
+" download ripgrep and put in path
+" for dyng/ctrlsf pluging
 call plug#begin('C:/Users/hp/AppData/Local/nvim/plugged')
 
 " Make sure you use single quotes
@@ -43,6 +45,10 @@ Plug 'RRethy/vim-illuminate'
 
 " Dim inactive window
 Plug 'TaDaa/vimade' " has configs
+
+" uses ripgrep (put in path for windows)
+" Ctrl+Shift+F like search
+Plug 'dyng/ctrlsf.vim'
 
 """"""" SNIPPETS
 " Install python3 (add to path)
