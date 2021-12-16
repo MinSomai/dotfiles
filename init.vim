@@ -12,7 +12,16 @@
 "
 " EXTRA
 " download ripgrep and put in path
-" for dyng/ctrlsf pluging
+" for dyng/ctrlsf plugin
+"
+" COC extensions
+" coc-snippets
+" coc-prettier
+" coc-pairs
+" coc-eslint
+" coc-vetur
+" coc-json
+" coc-css
 call plug#begin('C:/Users/hp/AppData/Local/nvim/plugged')
 
 " Make sure you use single quotes
@@ -42,6 +51,8 @@ Plug 'tpope/vim-surround'
 
 " highlight similar words
 Plug 'RRethy/vim-illuminate'
+
+Plug 'antoinemadec/FixCursorHold.nvim' "has config
 
 " Dim inactive window
 Plug 'TaDaa/vimade' " has configs
@@ -194,6 +205,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " one tab bu
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='jellybeans'
 
+" FixCursorHold config
+let g:cursorhold_updatetime = 100
 
 " Nerdtree config
 " toggle with f2
