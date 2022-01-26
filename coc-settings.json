@@ -8,7 +8,8 @@
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
       "wrap_attributes": "aligned-multiple",
-      "htmlWhitespaceSensitivity": "ignore"
+      "htmlWhitespaceSensitivity": "ignore",
+      "printWidth": 120
     },
     "prettyhtml": {
       "printWidth": 180,

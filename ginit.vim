@@ -5,7 +5,8 @@ set mouse=a
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
     " https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
-    GuiFont! FiraCode NF:h10
+    GuiFont! FiraCode Nerd Font:h9
+    " GuiFont! FiraCode NF:h10 " windows
 endif
 
 " Disable GUI Tabline

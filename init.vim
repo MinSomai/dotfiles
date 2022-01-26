@@ -10,6 +10,9 @@
 " Nodejs providers
 " $ npm install -g neovim 
 "
+" FiraCode Font
+" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
+"
 " EXTRA
 " download ripgrep and put in path
 " for dyng/ctrlsf plugin
@@ -22,7 +25,7 @@
 " coc-vetur
 " coc-json
 " coc-css
-call plug#begin('C:/Users/hp/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Make sure you use single quotes
 "
@@ -56,7 +59,7 @@ Plug 'antoinemadec/FixCursorHold.nvim' "has config
 
 " Dim inactive window
 Plug 'TaDaa/vimade' " has configs
-
+Plug 'fatih/vim-go'
 " uses ripgrep (put in path for windows)
 " Ctrl+Shift+F like search
 Plug 'dyng/ctrlsf.vim'
@@ -215,8 +218,8 @@ let NERDTreeMapOpenInTab='<ENTER>'
 let g:NERDTreeIgnore = ['^node_modules$']
 let g:NERDTreeWinSize=20
 
-" close vim if only tab is Nerdtree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Close the tab if NERDTree is the only window remaining in it.
+" autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 let g:NERDTreeDirArrowExpandable = '→'
 let g:NERDTreeDirArrowCollapsible = '↓'
 
@@ -236,8 +239,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 " auto open nerdtree
 autocmd VimEnter * NERDTree
 
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " tagalong
 let g:tagalong_additional_filetypes = ['vue', ]
