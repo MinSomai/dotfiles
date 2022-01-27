@@ -53,7 +53,19 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 
 """"" show lines in indents
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim' "has config with folds
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" EXTRA used by treesitter
+"
+
+
+""""" End Experiments 
+" :TSInstall vue
+" :TSInstall typescript
+" :TSInstall javascript
+" :TSInstall json
+" :TSInstall css
 
 " highlight similar words
 Plug 'RRethy/vim-illuminate'
@@ -63,6 +75,7 @@ Plug 'antoinemadec/FixCursorHold.nvim' "has config
 " Dim inactive window
 Plug 'TaDaa/vimade' " has configs
 Plug 'fatih/vim-go'
+
 " uses ripgrep (put in path for windows)
 " Ctrl+Shift+F like search
 Plug 'dyng/ctrlsf.vim'
@@ -195,7 +208,13 @@ set foldmethod=indent
 set foldlevel=10
 
 " fold with space according to shift width
-map <space> za
+" map <space> za
+
+" indent-blankline
+" when folding / unfolding refresh the indent lines
+map <space> za:IndentBlanklineRefresh<CR>
+nnoremap <silent> zR zR:IndentBlanklineRefresh<CR>
+
 
 set title
 
