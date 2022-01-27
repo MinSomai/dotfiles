@@ -52,6 +52,9 @@ Plug 'morhetz/gruvbox'
 """"" Experiments 
 Plug 'tpope/vim-surround'
 
+""""" show lines in indents
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 " highlight similar words
 Plug 'RRethy/vim-illuminate'
 
