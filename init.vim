@@ -72,8 +72,6 @@ Plug 'RRethy/vim-illuminate'
 
 Plug 'antoinemadec/FixCursorHold.nvim' "has config
 
-" Dim inactive window
-Plug 'TaDaa/vimade' " has configs
 Plug 'fatih/vim-go'
 
 " uses ripgrep (put in path for windows)
@@ -165,7 +163,7 @@ set smartcase " if has uppercase then case sensitive
 " change all to spaces
 set expandtab
 " spell checking
-set spelllang=en
+set spelllang=en,cjk
 
 """""""""""""""""""""""""""""""""""""""""
 " ==> Splits
@@ -459,11 +457,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " put below in the .bashrc
 " export FZF_DEFAULT_COMMAND='rg --files --follow --glob "!{node_modules/*,.git/*}"'
 " export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-" Vimade
-let g:vimade = {}
-let g:vimade.fadelevel = 0.7
-let g:vimade.enablesigns = 1
 
 " vim-snippets, coc-snippets
 " Use <C-l> for trigger snippet expand.
