@@ -25,6 +25,8 @@
 " coc-vetur
 " coc-json
 " coc-css
+"
+" NEOVIDE - if using this GUI, there's a configuration.
 call plug#begin('~/.config/nvim/plugged')
 
 " Make sure you use single quotes
@@ -47,7 +49,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " has configuration and coc plug
 " Nvim Theme
 Plug 'vim-airline/vim-airline' " has config
 Plug 'vim-airline/vim-airline-themes' " has config
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox' " has config
 
 """"" Experiments 
 Plug 'tpope/vim-surround'
@@ -59,6 +61,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " EXTRA used by treesitter
 "
 
+" VSCode like lightbuld
+Plug 'kosayoda/nvim-lightbulb'
 
 """"" End Experiments 
 " :TSInstall vue
@@ -99,7 +103,9 @@ Plug 'honza/vim-snippets' "has config for coc-snippets
 Plug 'tyru/caw.vim'
 Plug 'Shougo/context_filetype.vim'
 
+
 call plug#end()
+
 
 " ============================================================================
 " ===                                 Setup
@@ -107,6 +113,8 @@ call plug#end()
 " greeting :D
 let mapleader = ','
 echo ">^.^< \n leader is ,"
+
+set guifont=FiraCode\ Nerd\ Font:h9
 
 " ============================================================================
 " ===                                 Nvim Configuration.
@@ -226,7 +234,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " one tab bu
 
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='jellybeans'
+let g:airline_theme='violet'
 
 " FixCursorHold config
 let g:cursorhold_updatetime = 100
@@ -440,6 +448,8 @@ set wildignore=*/node_modules/*
 "Gruvbox vim theme settings
 colorscheme gruvbox " this is freaking awesome
 set bg=dark
+g:gruvbox_contrast_dark=hard
+g:gruvbox_contrast_light=hard
 
 " ctrlP
 " nnoremap <silent> <C-p> :FZF<CR>
@@ -501,3 +511,13 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
                 autocmd FileType vim setlocal foldmethod=marker
         augroup END
 " }}}
+
+" ============================================================================
+" ===                                 NEOVIDE/neovide
+" ============================================================================
+if exists("g:neovide")
+  let g:neovide_refresh_rate=60
+  let g:neovide_remember_window_size = v:true
+#let g:neovide_fullscreen=v:true #fullscreen
+#let g:neovide_cursor_animation_length=0.03
+endif
