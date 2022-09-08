@@ -1,11 +1,23 @@
 {
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [],
   "prettier.bracketSpacing": true,
   "prettier.proseWrap": "preserve",
   "prettier.htmlWhitespaceSensitivity": "ignore",
   "prettier.trailingComma": "es5",
   "prettier.arrowParens": "avoid",
   "prettier.printWidth": 120,
+  "prettier.eslintIntegration": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "ultisnips-vue/UltiSnips",
+    "vim-snippets/UltiSnips",
+    "mlaursen/vim-react-snippets"
+  ],
+  "snippets.extends": { "javascriptreact": ["javascript"], "typescript": ["javascript"] },
   "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
       "wrap_attributes": "aligned-multiple",
@@ -18,11 +30,5 @@
       "wrap_attributes": "aligned-multiple",
       "sortAttributes": false
     }
-  },
-  "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "php", "vue"],
-  "prettier.eslintIntegration": true,
-  "vetur.format.defaultFormatter.css": "prettier",
-  "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "snippets.ultisnips.directories": ["UltiSnips", "ultisnips-vue/UltiSnips", "vim-snippets/UltiSnips"]
+  }
 }
